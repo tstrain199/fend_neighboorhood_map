@@ -30,9 +30,9 @@ var initMap = function(){
       }
 
     var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i < allMarkers.length; i++) {
-      bounds.extend(allMarkers[i].getPosition());
-    };
+    for (var j = 0; j < allMarkers.length; j++) {
+      bounds.extend(allMarkers[j].getPosition());
+    }
     map.fitBounds(bounds);
 
   };
@@ -83,7 +83,7 @@ var initMap = function(){
    let marker1 = allMarkers.filter(marker => marker.title == data.name);
    // console.log(marker1[0]);
    model.fetch4sVenueId(data.location, data.name, marker1[0]);
- }
+ };
 
 resetMarkers();
 

@@ -1,5 +1,9 @@
-var model = {
+firebase.initializeApp(fb_config);
+console.log(firebase);
 
+var database = firebase.database();
+
+var model = {
   "usualClubs" : [
     {name: 'The Village Vanguard', location: {lat: 40.7360303, lng: -74.00168649999999}},
     {name: 'Smalls', location: {lat: 40.734295, lng: -74.002692}},
@@ -29,7 +33,7 @@ var model = {
         var robj = json._embedded.events;
         //console.log(robj);
         robj.forEach(function(event) {
-          var r_name = event._embedded.venues[0].name
+          var r_name = event._embedded.venues[0].name;
           var r_location_lat = event._embedded.venues[0].location.latitude;
           var r_location_lng = event._embedded.venues[0].location.longitude;
           var venue = {name: r_name,
@@ -44,7 +48,7 @@ var model = {
         //model.updateList(model.tmClubs);
       },
       error: function() {
-        alert("Oh No! Did we break the internet?")
+        alert("Oh No! Did we break the internet?");
       }
     });
   },
@@ -63,7 +67,7 @@ var model = {
         data:
           'limit-1' +
           '&client_id=XN55DS4DVJZQLSGGSZ3ZWM5HJYLDXMOD21LYJFU2R1DZWQWE' +
-          '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZ' +
+          '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZY' +
           '&ll=' + lat + ',' + lng +
           '&query=' + name +
           '&v=20170801' ,
@@ -74,7 +78,7 @@ var model = {
           //console.log(id);
         },
         error: function() {
-          alert("Oh No! Did we break the internet?")
+          alert("Oh No! Did we break the internet?");
         }
 
       });
@@ -92,10 +96,10 @@ var model = {
       success: function(data) {
        //  console.log(data);
       //  model.appendDetails(list, index, data);
-         createInfoWindow(data, marker)
+         createInfoWindow(data, marker);
       },
       error: function() {
-        alert("Oh No! Did we break the internet?")
+        alert("Oh No! Did we break the internet?");
       }
 
     });
