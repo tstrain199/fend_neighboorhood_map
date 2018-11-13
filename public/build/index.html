@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+  </head>
+
+  <body>
+    <nav id="menu">
+      <header>
+        <form>
+          <div>
+            <input type="radio" name="sourceGroup" value="default" data-bind="checked: source">
+            <label style="color:#F5F5F1" for="default">Default Clubs</label><br>
+            <input type="radio" name="sourceGroup" value="tm" data-bind="checked: source">
+            <label style="color:#F5F5F1" for="contactChoice2">TicketMaster</label><br>
+            <button id="fancy_btn" data-bind="click: changeSource, enable: btn2_on">Select Source</button>
+          </div>
+          <hr></hr>
+          <hr></hr>
+        </form>
+            <ul style="list-style-type: none;" data-bind="foreach: clubList">
+              <li><a href="#"  style="color:#F5F5F1; text-decoration:none" data-bind="text: name, click: $parent.buildInfoWindow"></a><hr></hr></li>
+              </li>
+            </ul>
+          </div>
+          <div id="filterBox">
+            <input data-bind="textInput: filterString" />
+            <i class="fas fa-filter" data-bind="click: filterList, enable: btn1_on">  </i>
+            <button id="showall" href="#" data-bind="click: resetAll">Show All Clubs</button>
+          </div>
+        </header>
+    </nav>
+      <main id="panel">
+        <button class="toggle-button"><i class="fa fa-bars"></i></button>
+        <div id="map" class="map_area"></div>
+
+        <script type='text/javascript' src='js/jquery.js'></script>
+        <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
+        <script type='text/javascript' src='js/data.js'></script>
+        <script src="js/viewmodel.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9J8hskzcIDdAS6E-ISNkPkld49q7ds_c&callback=initMap"
+        async defer></script>
+        <script src="js/classes.js"></script>
+        <script>
+            var viewModel = new ViewModel();
+            ko.applyBindings(viewModel);
+        </script>
+      </main>
+      <script src="js/slideout.min.js"></script>
+      <script>
+        var slideout = new Slideout({
+          'panel': document.getElementById('panel'),
+          'menu': document.getElementById('menu'),
+          'padding': 172,
+          'tolerance': 70
+        });
+        document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+      </script>
+  </body>
+</html>
