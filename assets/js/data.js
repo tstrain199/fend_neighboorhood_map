@@ -43,8 +43,8 @@ var model = {
         });
         //model.updateList(model.tmClubs);
       },
-      error: function(xhr, status, err) {
-        console.log(err);
+      error: function() {
+        alert("Oh No! Did we break the internet?")
       }
     });
   },
@@ -63,7 +63,7 @@ var model = {
         data:
           'limit-1' +
           '&client_id=XN55DS4DVJZQLSGGSZ3ZWM5HJYLDXMOD21LYJFU2R1DZWQWE' +
-          '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZY' +
+          '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZ' +
           '&ll=' + lat + ',' + lng +
           '&query=' + name +
           '&v=20170801' ,
@@ -73,8 +73,8 @@ var model = {
           model.fetch4sVenueDetails(id, marker);
           //console.log(id);
         },
-        error: function(xhr, status, err) {
-          console.log(err);
+        error: function() {
+          alert("Oh No! Did we break the internet?")
         }
 
       });
@@ -94,8 +94,8 @@ var model = {
       //  model.appendDetails(list, index, data);
          createInfoWindow(data, marker)
       },
-      error: function(xhr, status, err) {
-        console.log(err);
+      error: function() {
+        alert("Oh No! Did we break the internet?")
       }
 
     });

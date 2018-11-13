@@ -81,7 +81,7 @@ var initMap = function(){
 
  listInfoWindow = function(data){
    let marker1 = allMarkers.filter(marker => marker.title == data.name);
-   console.log(marker1[0]);
+   // console.log(marker1[0]);
    model.fetch4sVenueId(data.location, data.name, marker1[0]);
  }
 

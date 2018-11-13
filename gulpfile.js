@@ -5,8 +5,9 @@ var cleanCss = require('gulp-clean-css');
 var del = require('del');
 
 gulp.task('pack-js', ['clean-js'], function() {
-  return gulp.src(['assets/js/vendor/*.js', 'assets/js/viewmodel.js',
-    'assets/js/classes.js', 'assets/js/data.js'])
+  return gulp.src(['assets/js/vendor/*.js',
+    'assets/js/data.js', 'assets/js/viewmodel.js',
+    'assets/js/classes.js'])
     .pipe(concat('bundle.js'))
     .pipe(minify({
       ext:{
