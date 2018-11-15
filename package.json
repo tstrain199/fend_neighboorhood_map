@@ -2,10 +2,15 @@
   "name": "neighborhood_map",
   "version": "1.0.0",
   "description": "Udacity FEWD Project",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+   }
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-clean-css": "^3.10.0",
+    "gulp-cli": "github:gulpjs/gulp-cli",
     "gulp-concat": "^2.6.1",
     "gulp-minify": "^3.1.0"
   }
