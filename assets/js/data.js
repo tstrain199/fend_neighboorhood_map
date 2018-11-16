@@ -11,14 +11,16 @@ var model = {
     {name: 'The Blue Note', location: {lat: 40.7308943, lng: -74.00070300000002}}
   ],
 
-  Club:  function(name, location){
+/*  Club:  function(name, location){
       this.name = name;
       this.location = location;
   },
+*/
 
   "tmClubs" : [],
   "sortList" : [],
 
+  // get name and location data of Jazz events in NYC area
   fetchTmData : function() {
     $.ajax({
       type: "GET",
@@ -27,7 +29,6 @@ var model = {
       dataType: "json",
       success: function(json){
         var robj = json._embedded.events;
-        //console.log(robj);
         robj.forEach(function(event) {
           var r_name = event._embedded.venues[0].name
           var r_location_lat = event._embedded.venues[0].location.latitude;
@@ -41,20 +42,18 @@ var model = {
             model.sortList.push(r_name);
           }
         });
-        //model.updateList(model.tmClubs);
       },
       error: function() {
-        alert("Oh No! Did we break the internet?")
+        alert("Oh No! Faied to get data from Ticketmaster?")
       }
     });
   },
 
-
+// lookup Foursquare venue ID  based on name and location retrived from Ticketmaster
 // https://stackoverflow.com/questions/8427012/foursquare-javascript-api
 //https://stackoverflow.com/questions/35026964/what-is-wrong-with-my-foursquare-api-call
   fetch4sVenueId : function(location1, name1, marker) {
       name = name1;
-      // console.log(location1);
       lat = location1.lat;
       lng = location1.lng;
       $.ajax({
@@ -63,7 +62,7 @@ var model = {
         data:
           'limit-1' +
           '&client_id=XN55DS4DVJZQLSGGSZ3ZWM5HJYLDXMOD21LYJFU2R1DZWQWE' +
-          '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZ' +
+          '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZY' +
           '&ll=' + lat + ',' + lng +
           '&query=' + name +
           '&v=20170801' ,
@@ -71,15 +70,15 @@ var model = {
         success: function (data) {
           var id = data.response.venues[0].id;
           model.fetch4sVenueDetails(id, marker);
-          //console.log(id);
         },
         error: function() {
-          alert("Oh No! Did we break the internet?")
+          alert("Oh No! We failed to get venue data from Foursquare?")
         }
 
       });
     },
 
+// get venue details (image and phone) from venue ID
   fetch4sVenueDetails : function(id, marker) {
     $.ajax({
       url: 'https://api.foursquare.com/v2/venues/' + id,
@@ -90,19 +89,17 @@ var model = {
         '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZY' ,
       async: true,
       success: function(data) {
-       //  console.log(data);
-      //  model.appendDetails(list, index, data);
          createInfoWindow(data, marker)
       },
       error: function() {
-        alert("Oh No! Did we break the internet?")
+        alert("Oh No! We failed to get details from Foursquare. Did we break the internet?")
       }
 
     });
   },
 
+ // add image and phone to active list
   appendDetails : function(list, index, data) {
-    //console.log(data.response.venue.photos.groups[0].items[1].prefix);
     imgUrlPre = data.response.venue.photos.groups[0].items[0].prefix;
     imgUrlPost = data.response.venue.photos.groups[0].items[0].suffix;
     phone = data.response.venue.contact.formattedPhone;
@@ -117,12 +114,4 @@ var model = {
   }
 };
 
-//console.log(model.usualClubs)
 model.fetchTmData();
-// model.updateList(model.usualClubs);
-
-
-
-// var vid = model.fetch4sVenueId(model.usualClubs[4]);
- //console.log(model.usualClubs);
- // console.log(model.tmClubs);

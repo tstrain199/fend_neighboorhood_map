@@ -1,11 +1,12 @@
 {
   "name": "neighborhood_map",
   "version": "1.0.0",
-  "description": "Udacity FEWD Project",
+  "description": "Udacity FEND Neighborhood Map Project",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git://github.com/username/repository.git"
-   }
+    "url": "git://github.com/tstrain199/fend_neighborhood_map.git"
+  },
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^4.0.0",

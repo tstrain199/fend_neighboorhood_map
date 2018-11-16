@@ -10,6 +10,7 @@ var initMap = function(){
 
   var infowindow = new google.maps.InfoWindow();
 
+// clears all markers and adds markers for active list
   resetMarkers = function() {
     deleteMarkers();
     for (var i = 0; i < viewModel.clubList().length; i++){
@@ -29,6 +30,7 @@ var initMap = function(){
       })(location1, name1);
       }
 
+    //set map bounds to include only displayed list
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i < allMarkers.length; i++) {
       bounds.extend(allMarkers[i].getPosition());
@@ -37,10 +39,10 @@ var initMap = function(){
 
   };
 
-  hideMarker = function(id){
+  /* hideMarker = function(id){
     console.log(allMarkers[id]);
     allMarkers[id].setVisible(false);
-  };
+  }; */
 
   // Sets the map on all markers in the array.
   setMapOnAll = function(map) {
@@ -62,7 +64,6 @@ var initMap = function(){
 
 //Taken from L17S7
  createInfoWindow = function(data, marker) {
-   // console.log(data);
    marker.setAnimation(google.maps.Animation.BOUNCE);
    window.setTimeout(function() {
      marker.setAnimation(null);
@@ -75,13 +76,11 @@ var initMap = function(){
    infowindow.setContent('<div>' + marker.title + '</div>' +
     '<div>' + phone + '</div>' +
     '<div style="width:200px; height:310px; "> <img src="' + image + '"></div>');
-   //infowindow.setContent(content);
    infowindow.open(map, marker);
  };
 
  listInfoWindow = function(data){
    let marker1 = allMarkers.filter(marker => marker.title == data.name);
-   // console.log(marker1[0]);
    model.fetch4sVenueId(data.location, data.name, marker1[0]);
  }
 
