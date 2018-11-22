@@ -5,17 +5,17 @@ var cleanCss = require('gulp-clean-css');
 var del = require('del');
 
 gulp.task('clean-js', function () {
-  return del(['public/build/js/*.js']);
+  return del(['dist/js/*.js']);
 });
 
 gulp.task('clean-css', function () {
-  return del(['public/build/css/*.css']);
+  return del(['dist/css/*.css']);
 });
 
 gulp.task('pack-js', gulp.series('clean-js', function() {
-  return gulp.src(['assets/js/vendor/*.js',
-    'assets/js/data.js', 'assets/js/viewmodel.js',
-    'assets/js/classes.js'])
+  return gulp.src(['src/js/vendor/*.js',
+    'src/js/data.js', 'src/js/viewmodel.js',
+    'src/js/classes.js'])
     .pipe(concat('bundle.js'))
     .pipe(minify({
       ext:{
@@ -23,14 +23,14 @@ gulp.task('pack-js', gulp.series('clean-js', function() {
       },
       noSource: true
     }))
-    .pipe(gulp.dest('public/build/js'));
+    .pipe(gulp.dest('dist/js'));
 }));
 
 gulp.task('pack-css', gulp.series('clean-css', function () {
-	return gulp.src(['assets/css/style.css'])
+	return gulp.src(['src/css/style.css'])
 		.pipe(concat('stylesheet.css'))
     .pipe(cleanCss())
-		.pipe(gulp.dest('public/build/css'));
+		.pipe(gulp.dest('dist/css'));
 }));
 
 
