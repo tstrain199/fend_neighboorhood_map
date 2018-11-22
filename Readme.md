@@ -1,10 +1,10 @@
 <!-- Heading -->
 # Front-End Web Developer Nanodegree Neighborhood Map
 
-##About this project
+## About this project
 This is a single page application that serves as the capstone project to Udacity's Front-End Web Developer Nanaodegree.
 
-###Techniques Used
+### Techniques Used
 
 * Use of a Javascript framework (Knockout JS)
 * Data point via asynchronous third party API calls
@@ -12,22 +12,22 @@ This is a single page application that serves as the capstone project to Udacity
 * Responsive rendering for multiple devices
 * Use of Google Maps API with markers and infowindows
 
-###Features
+### Features
 
 * Locations of Jazz music in the NYC metro map_area
 * Selectable source of locations (default or TicketMaster)
 * Ability to filter the Location list
 * Clickable list and markers display image and phone number of location
 
-##How To
+## How To
 
-###Setup
+### Setup
 1. Clone this repository
 1. Inside the repository directory run npm install
 1. Run gulp with no arguments
 1. Open dist/index.html in a modern browser
 
-###Gulp tasks
+### Gulp tasks
 * clean-js    Removes bundle.js file from dist/js directory
 * clean-css   Removes stylesheet.css file from dist/css directory
 * pack-js     Minifies all javascript files and concatenates them into a single bundle.js file
