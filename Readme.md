@@ -27,6 +27,12 @@ This is a single page application that serves as the capstone project to Udacity
 1. Run gulp with no arguments
 1. Open dist/index.html in a modern browser
 
+> git clone https://github.com/tstrain199/fend_neighborhood_map.git
+> cd fend_neighborhood_map
+> npm install
+> gulp
+
+
 ### Gulp tasks
 * clean-js    Removes bundle.js file from dist/js directory
 * clean-css   Removes stylesheet.css file from dist/css directory
