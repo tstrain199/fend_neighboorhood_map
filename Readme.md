@@ -1,4 +1,3 @@
-<!-- Heading -->
 # Front-End Web Developer Nanodegree Neighborhood Map
 
 ## About this project
@@ -33,9 +32,9 @@ gulp
 ```
 
 ### User Controls
-**Select Source**  Choose between the best known venues or venues with events listed on Ticketmaster
-**Filter** Filter venues based on text text text
-**Show All Clubs**  Removes filter; Displays complete list
+**Select Source**  --> Choose between the best known venues or venues with events listed on Ticketmaster  
+**Filter**    --> Filter venues based on text text text  
+**Show All Clubs**   --> Removes filter
 
 
 ### Gulp tasks
