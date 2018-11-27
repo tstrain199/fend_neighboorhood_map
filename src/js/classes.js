@@ -71,7 +71,12 @@ var initMap = function(){
    imgUrlPre = data.response.venue.photos.groups[1].items[0].prefix;
    imgUrlPost = data.response.venue.photos.groups[1].items[0].suffix;
    image = imgUrlPre + '300x300' + imgUrlPost;
+   if (data.response.venue.contact.formattedPhone==undefined){
+     phone = 'No Phone Number Available';
+   }
+   else {
    phone = data.response.venue.contact.formattedPhone;
+   }
    infowindow.marker = marker;
    infowindow.setContent('<div>' + marker.title + '</div>' +
     '<div>' + phone + '</div>' +

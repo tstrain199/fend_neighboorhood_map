@@ -74,7 +74,6 @@ var model = {
         error: function() {
           alert("Oh No! We failed to get venue data from Foursquare?")
         }
-
       });
     },
 
@@ -94,24 +93,8 @@ var model = {
       error: function() {
         alert("Oh No! We failed to get details from Foursquare. Did we break the internet?")
       }
-
     });
   },
-
- // add image and phone to active list
-  appendDetails : function(list, index, data) {
-    imgUrlPre = data.response.venue.photos.groups[0].items[0].prefix;
-    imgUrlPost = data.response.venue.photos.groups[0].items[0].suffix;
-    phone = data.response.venue.contact.formattedPhone;
-    list[index].phone = phone;
-    list[index].image = imgUrlPre + '300x300' + imgUrlPost;
-  },
-
-  updateList : function(list) {
-    for (i = 0; i < list.length; i++) {
-      model.fetch4sVenueId(list, i);
-    }
-  }
 };
 
 model.fetchTmData();
