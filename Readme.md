@@ -5,7 +5,6 @@
 This is a single page application that serves as the capstone project to Udacity's Front-End Web Developer Nanaodegree.
 
 ### Techniques Used
-
 * Use of a Javascript framework (Knockout JS)
 * Data point via asynchronous third party API calls
 * Error handling for asynchronous API calls
@@ -13,11 +12,10 @@ This is a single page application that serves as the capstone project to Udacity
 * Use of Google Maps API with markers and infowindows
 
 ### Features
-
-* Locations of Jazz music in the NYC metro map_area
-* Selectable source of locations (default or TicketMaster)
-* Ability to filter the Location list
-* Clickable list and markers display image and phone number of location
+* Venues that feature Jazz music in the NYC metro map_area
+* Selectable source of venues (default or TicketMaster)
+* Ability to filter the venue list
+* Clickable list and markers display image and phone number of venue
 
 ## How To
 
@@ -27,10 +25,16 @@ This is a single page application that serves as the capstone project to Udacity
 1. Run gulp with no arguments
 1. Open dist/index.html in a modern browser
 
-> git clone https://github.com/tstrain199/fend_neighborhood_map.git
-> cd fend_neighborhood_map
-> npm install
-> gulp
+```git clone https://github.com/tstrain199/fend_neighborhood_map.git
+cd fend_neighborhood_map
+npm install
+gulp
+```
+
+### User Controls
+__ Select Source __  Choose between the best known venues or venues with events listed on Ticketmaster
+__ Filter __ Filter venues based on text text text
+__ Show All Clubs __  Removes filter
 
 
 ### Gulp tasks
