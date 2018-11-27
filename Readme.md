@@ -33,9 +33,9 @@ gulp
 ```
 
 ### User Controls
-__Select Source__  Choose between the best known venues or venues with events listed on Ticketmaster
-__Filter__ Filter venues based on text text text
-__Show All Clubs__  Removes filter; Displays complete list
+**Select Source**  Choose between the best known venues or venues with events listed on Ticketmaster
+**Filter** Filter venues based on text text text
+**Show All Clubs**  Removes filter; Displays complete list
 
 
 ### Gulp tasks
