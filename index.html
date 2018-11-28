@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Todd's Jazz Finder</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
@@ -15,19 +16,17 @@
         <form>
           <div>
             <input type="radio" name="sourceGroup" value="default" data-bind="checked: source">
-            <label style="color:#F5F5F1" for="default">Default Clubs</label><br>
+            <label style="color:#F5F5F1">Default Clubs</label><br>
             <input type="radio" name="sourceGroup" value="tm" data-bind="checked: source">
-            <label style="color:#F5F5F1" for="contactChoice2">TicketMaster</label><br>
+            <label style="color:#F5F5F1">TicketMaster</label><br>
             <button id="fancy_btn" data-bind="click: changeSource, enable: btn2_on">Select Source</button>
           </div>
-          <hr></hr>
-          <hr></hr>
+          <hr>
+          <hr>
         </form>
             <ul style="list-style-type: none;" data-bind="foreach: clubList">
               <li><a href="#"  style="color:#F5F5F1; text-decoration:none" data-bind="text: name, click: $parent.buildInfoWindow"></a><hr></hr></li>
-              </li>
             </ul>
-          </div>
           <div id="filterBox">
             <input data-bind="textInput: filterString" />
             <i class="fas fa-filter" data-bind="click: filterList, enable: btn1_on">  </i>
@@ -39,10 +38,10 @@
         <button class="toggle-button"><i class="fa fa-bars"></i></button>
         <div id="map" class="map_area"></div>
 
-        <script type='text/javascript' src='assets/js/vendor/jquery-3.2.1.min.js'></script>
-        <script type='text/javascript' src='assets/js/vendor/knockout-3.4.2.js'></script>
-        <script type='text/javascript' src='assets/js/data.js'></script>
-        <script type='text/javascript' src="assets/js/viewmodel.js"></script>
+        <script src='assets/js/vendor/jquery-3.2.1.min.js'></script>
+        <script src='assets/js/vendor/knockout-3.4.2.js'></script>
+        <script src='assets/js/data.js'></script>
+        <script src="assets/js/viewmodel.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9J8hskzcIDdAS6E-ISNkPkld49q7ds_c&callback=initMap"
         async defer></script>
         <script src="assets/js/classes.js"></script>
