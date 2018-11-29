@@ -1,5 +1,5 @@
+/* jshint esversion: 6 */
 var initMap = function(){
-
   $('#map_area').height($('#body').height());
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.750568, lng: -73.993519},
@@ -32,9 +32,9 @@ var initMap = function(){
 
     //set map bounds to include only displayed list
     var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i < allMarkers.length; i++) {
-      bounds.extend(allMarkers[i].getPosition());
-    };
+    for (var j = 0; j < allMarkers.length; j++) {
+      bounds.extend(allMarkers[j].getPosition());
+    }
     map.fitBounds(bounds);
 
   };
@@ -87,7 +87,7 @@ var initMap = function(){
  listInfoWindow = function(data){
    let marker1 = allMarkers.filter(marker => marker.title == data.name);
    model.fetch4sVenueId(data.location, data.name, marker1[0]);
- }
+ };
 
 resetMarkers();
 

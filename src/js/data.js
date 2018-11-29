@@ -30,7 +30,7 @@ var model = {
       success: function(json){
         var robj = json._embedded.events;
         robj.forEach(function(event) {
-          var r_name = event._embedded.venues[0].name
+          var r_name = event._embedded.venues[0].name;
           var r_location_lat = event._embedded.venues[0].location.latitude;
           var r_location_lng = event._embedded.venues[0].location.longitude;
           var venue = {name: r_name,
@@ -44,7 +44,7 @@ var model = {
         });
       },
       error: function() {
-        alert("Oh No! Faied to get data from Ticketmaster?")
+        alert("Oh No! Faied to get data from Ticketmaster?");
       }
     });
   },
@@ -72,7 +72,7 @@ var model = {
           model.fetch4sVenueDetails(id, marker);
         },
         error: function() {
-          alert("Oh No! We failed to get venue data from Foursquare?")
+          alert("Oh No! We failed to get venue data from Foursquare");
         }
       });
     },
@@ -88,10 +88,10 @@ var model = {
         '&client_secret=MNMNXPO1W2BF5LNSWYIUJ0YAHXVSRHDI5SUSWHO0IAKDGXZY' ,
       async: true,
       success: function(data) {
-         createInfoWindow(data, marker)
+         createInfoWindow(data, marker);
       },
       error: function() {
-        alert("Oh No! We failed to get details from Foursquare. Did we break the internet?")
+        alert("Oh No! We failed to get details from Foursquare. Did we break the internet?");
       }
     });
   },

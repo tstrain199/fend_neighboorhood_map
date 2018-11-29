@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="src/css/style.css">
   </head>
 
   <body>
@@ -38,19 +38,19 @@
         <button class="toggle-button"><i class="fa fa-bars"></i></button>
         <div id="map" class="map_area"></div>
 
-        <script src='assets/js/vendor/jquery-3.2.1.min.js'></script>
-        <script src='assets/js/vendor/knockout-3.4.2.js'></script>
-        <script src='assets/js/data.js'></script>
-        <script src="assets/js/viewmodel.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9J8hskzcIDdAS6E-ISNkPkld49q7ds_c&callback=initMap"
+        <script src='src/js/vendor/jquery-3.2.1.min.js'></script>
+        <script src='src/js/vendor/knockout-3.4.2.js'></script>
+        <script src='src/js/data.js'></script>
+        <script src="src/js/viewmodel.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9J8hskzcIDdAS6E-ISNkPkld49q7ds_c&callback=initMap" onerror="mapError()"
         async defer></script>
-        <script src="assets/js/classes.js"></script>
+        <script src="src/js/classes.js"></script>
         <script>
             var viewModel = new ViewModel();
             ko.applyBindings(viewModel);
         </script>
       </main>
-      <script src="assets/js//vendor/slideout.min.js"></script>
+      <script src="src/js//vendor/slideout.min.js"></script>
 
       <script>
         var slideout = new Slideout({

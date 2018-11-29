@@ -26,7 +26,7 @@ function ViewModel() {
         var patt = new RegExp(self.filterString());
         if (patt.test(club.name)){
           self.tmpList.push(club);
-        };
+        }
     };
 
     // get and display filtered list
@@ -57,11 +57,15 @@ function ViewModel() {
         self.clubs = model.usualClubs;
         self.showClubs();
         resetMarkers();
-      };
+      }
     };
 
     // builds infowindow
     self.buildInfoWindow = function(data) {
       listInfoWindow(data);
-    }
+    };
 }
+
+var mapError = function() {
+  alert("Oh No! Faied to get data from Google Maps");
+};
