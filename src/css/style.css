@@ -1,24 +1,29 @@
-#map {
-    height: 100%;
-    width: 100%
-  }
-
-*:focus {outline:none !important}
-
-  html, body, main {
-    height: 100%;
-    width:  100%
-    margin: 0;
-    padding: 0;
-    font-family: 'Josefin Sans', sans-serif;
-  }
-
-ul, li {
-  color: white;
-  padding-inline-start: 0px
+.map_area {
+  height: 100%;
+  width: 100%;
 }
 
+*:focus {
+  outline: none !important;
+}
 
+html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+ul {
+  color: white;
+}
+
+li {
+  color: white;
+}
 
 .slideout-menu {
   position: fixed;
@@ -30,7 +35,7 @@ ul, li {
   -webkit-overflow-scrolling: touch;
   z-index: 0;
   display: none;
-  background-color: #221F1F;
+  background-color: #221f1f;
 }
 
 .slideout-menu-left {
@@ -45,7 +50,7 @@ ul, li {
   position: relative;
   z-index: 1;
   will-change: transform;
-  background-color: #221F1F; /* A background-color is required */
+  background-color: #221f1f; /* A background-color is required */
   min-height: 100vh;
 }
 
@@ -60,13 +65,12 @@ ul, li {
 }
 
 .toggle-button {
-    background-color: #E50914;
-    border: none;
-    color: white;
-    padding: 14px 18px;
-    font-size: 16px;
-    cursor: pointer;
-
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 14px 18px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 780px) {
@@ -83,7 +87,7 @@ ul, li {
   }
 }
 
-#fancy_btn {
+.fancy_btn {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -91,25 +95,12 @@ ul, li {
   color: white;
   width: 125px;
   height: 25px;
-  background: #E50914;
+  background: #e50914;
   position: relative;
   border-radius: 10px;
 }
 
-#filter {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  text-decoration: none;
-  color: white;
-  width: 80px;
-  height: 25px;
-  background: #E50914;
-  position: relative;
-  border-radius: 10px;
-}
-
-#showall {
+.showall {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -117,11 +108,19 @@ ul, li {
   color: white;
   width: 135px;
   height: 25px;
-  background: #E50914;
+  background: #e50914;
   position: relative;
   border-radius: 10px;
 }
 
 .fas {
-  color: #E50914;
+  color: #e50914;
+}
+
+.logo {
+  width: 172px;
+  height: auto;
+}
+::-webkit-scrollbar {
+  display: none;
 }

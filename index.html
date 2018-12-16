@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <nav id="menu">
+    <nav class="menu">
       <header>
         <form>
           <div>
@@ -19,7 +19,7 @@
             <label style="color:#F5F5F1">Default Clubs</label><br>
             <input type="radio" name="sourceGroup" value="tm" data-bind="checked: source">
             <label style="color:#F5F5F1">TicketMaster</label><br>
-            <button id="fancy_btn" data-bind="click: changeSource, enable: btn2_on">Select Source</button>
+            <button class="fancy_btn" data-bind="click: changeSource, enable: btn2_on">Select Source</button>
           </div>
           <hr>
           <hr>
@@ -27,41 +27,34 @@
             <ul style="list-style-type: none;" data-bind="foreach: clubList">
               <li><a href="#"  style="color:#F5F5F1; text-decoration:none" data-bind="text: name, click: $parent.buildInfoWindow"></a><hr></hr></li>
             </ul>
-          <div id="filterBox">
+          <div>
             <input data-bind="textInput: filterString" />
             <i class="fas fa-filter" data-bind="click: filterList, enable: btn1_on">  </i>
-            <button id="showall" href="#" data-bind="click: resetAll">Show All Clubs</button>
+            <button class="showall" href="#" data-bind="click: resetAll">Show All Clubs</button>
+            <div>
+              <img class='logo' src="src/img/Ticketmaster-LOGO.jpg" alt="Ticketmaster">
+              <img class='logo' src="src/img/foursquare.jpg" alt="Foursquare">
+            </div>
           </div>
         </header>
     </nav>
-      <main id="panel">
+      <main class="panel">
         <button class="toggle-button"><i class="fa fa-bars"></i></button>
-        <div id="map" class="map_area"></div>
+        <div class="map_area"></div>
 
         <script src='src/js/vendor/jquery-3.2.1.min.js'></script>
         <script src='src/js/vendor/knockout-3.4.2.js'></script>
         <script src='src/js/data.js'></script>
-        <script src="src/js/viewmodel.js"></script>
+        <script src='src/js/viewmodel.js'></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9J8hskzcIDdAS6E-ISNkPkld49q7ds_c&callback=initMap" onerror="mapError()"
-        async defer></script>
-        <script src="src/js/classes.js"></script>
+        async defer>
+</script>
+        <script src='src/js/classes.js'></script>
         <script>
-            var viewModel = new ViewModel();
-            ko.applyBindings(viewModel);
-        </script>
+        var viewModel = new ViewModel(); ko.applyBindings(viewModel);
+</script>
       </main>
-      <script src="src/js//vendor/slideout.min.js"></script>
-
-      <script>
-        var slideout = new Slideout({
-          'panel': document.getElementById('panel'),
-          'menu': document.getElementById('menu'),
-          'padding': 172,
-          'tolerance': 70
-        });
-        document.querySelector('.toggle-button').addEventListener('click', function() {
-        slideout.toggle();
-      });
-      </script>
+      <script src="src/js/vendor/slideout.min.js"></script>
+      <script src='src/js/menu.js'></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Todd's Jazz Finder</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
@@ -10,53 +11,44 @@
   </head>
 
   <body>
-    <nav id="menu">
+    <nav class="menu">
       <header>
         <form>
           <div>
             <input type="radio" name="sourceGroup" value="default" data-bind="checked: source">
-            <label style="color:#F5F5F1" for="default">Default Clubs</label><br>
+            <label style="color:#F5F5F1">Default Clubs</label><br>
             <input type="radio" name="sourceGroup" value="tm" data-bind="checked: source">
-            <label style="color:#F5F5F1" for="contactChoice2">TicketMaster</label><br>
-            <button id="fancy_btn" data-bind="click: changeSource, enable: btn2_on">Select Source</button>
+            <label style="color:#F5F5F1">TicketMaster</label><br>
+            <button class="fancy_btn" data-bind="click: changeSource, enable: btn2_on">Select Source</button>
           </div>
-          <hr></hr>
-          <hr></hr>
+          <hr>
+          <hr>
         </form>
             <ul style="list-style-type: none;" data-bind="foreach: clubList">
               <li><a href="#"  style="color:#F5F5F1; text-decoration:none" data-bind="text: name, click: $parent.buildInfoWindow"></a><hr></hr></li>
-              </li>
             </ul>
-          </div>
-          <div id="filterBox">
+          <div>
             <input data-bind="textInput: filterString" />
             <i class="fas fa-filter" data-bind="click: filterList, enable: btn1_on">  </i>
-            <button id="showall" href="#" data-bind="click: resetAll">Show All Clubs</button>
+            <button class="showall" href="#" data-bind="click: resetAll">Show All Clubs</button>
+            <div>
+              <img class='logo' src="img/Ticketmaster-LOGO.jpg" alt="Ticketmaster">
+              <img class='logo' src="img/foursquare.jpg" alt="Foursquare">
+            </div>
           </div>
         </header>
     </nav>
-      <main id="panel">
+      <main class="panel">
         <button class="toggle-button"><i class="fa fa-bars"></i></button>
-        <div id="map" class="map_area"></div>
+        <div class="map_area"></div>
 
-        <script type='text/javascript' src='js/bundle.js'></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9J8hskzcIDdAS6E-ISNkPkld49q7ds_c&callback=initMap"
-        async defer></script>
+        <script src='js/bundle.js'></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9J8hskzcIDdAS6E-ISNkPkld49q7ds_c&callback=initMap" onerror="mapError()"
+        async defer>
+</script>
         <script>
-            var viewModel = new ViewModel();
-            ko.applyBindings(viewModel);
-        </script>
+        var viewModel = new ViewModel(); ko.applyBindings(viewModel);
+</script>
       </main>
-      <script>
-        var slideout = new Slideout({
-          'panel': document.getElementById('panel'),
-          'menu': document.getElementById('menu'),
-          'padding': 172,
-          'tolerance': 70
-        });
-        document.querySelector('.toggle-button').addEventListener('click', function() {
-        slideout.toggle();
-      });
-      </script>
   </body>
 </html>

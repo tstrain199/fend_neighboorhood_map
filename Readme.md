@@ -18,6 +18,8 @@ This is a single page application that serves as the capstone project to Udacity
 
 ## How To
 
+Go directly to the project [here](https://tstrain199.github.io/fend_neighborhood_map/) or follow the instructions below.
+
 ### Setup
 1. Clone this repository
 1. Inside the repository directory run npm install
